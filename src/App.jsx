@@ -1,0 +1,46 @@
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import Home from "./components/Home/Home";
+import ArticleDetails from "./components/Home/ArticlesDetails";
+import FindDoctors from "./components/Doctors/FindDoctors";
+import DoctorsPage from "./components/Doctors/DoctorsPage";
+import SurgeriesPage from "./components/Surgeries/SurgeriesPage";
+import VideoConsultPage from "./components/Videoconsult/VideoConsultPage";
+import ConsultFormPage from "./components/Videoconsult/ConsultFormPage";
+
+
+import Login from "./components/Auth/Login";
+import Signup from "./components/Auth/Signup";
+import Appointments from "./components/Appointments/Appointments";
+import BookingPage from "./components/Appointments/BookingPage";
+import BookingSummary from "./components/Appointments/BookingSummary";
+
+function App() {
+
+
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="article/:id" element={<ArticleDetails />} />
+        <Route path="doctors" element={<FindDoctors />} />
+        <Route path="search" element={<DoctorsPage />} />
+        <Route path="video-consult" element={<VideoConsultPage />} />
+
+
+        <Route path="surgeries" element={<SurgeriesPage />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="appointments" element={<Appointments />} />
+        <Route path="booking/:doctorId" element={<BookingPage />} />
+        <Route path="booking-summary" element={<BookingSummary />} />
+      </Route>
+      <Route path="consult/direct" element={<ConsultFormPage />} />
+    </Routes>
+
+  );
+}
+
+export default App;
+
+
